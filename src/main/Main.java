@@ -14,7 +14,7 @@ public class Main {
 	static String path = "src/text.txt";
 	
 	public static void main(String[] args) {
-		
+
 		try {
 			readFile();
 			System.out.println(data.getText());

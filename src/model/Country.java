@@ -1,6 +1,6 @@
 package model;
 
-public class Country {
+public class Country implements Comparable<Country>{
 	private String name;
 	private int goldMan;
 	private int silverMan;
@@ -103,6 +103,19 @@ public class Country {
 
 	public void setBronzeTotal(int bronzeTotal) {
 		this.bronzeTotal = bronzeTotal;
+	}
+
+	@Override
+	public int compareTo(Country o) {
+		if (this.getGoldWoman() != o.getGoldWoman()) {
+			return this.getGoldWoman() - o.getGoldWoman();
+		} else if (this.getSilverWoman() != o.getSilverWoman()) {
+			return this.getSilverWoman() - o.getSilverWoman();
+		} else if (this.getBronzeWoman() != o.getBronzeWoman()) {
+			return this.getBronzeWoman() - o.getBronzeWoman();
+		} else {
+			return this.getName().compareTo(o.getName());
+		}
 	}
 	
 	
